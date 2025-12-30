@@ -1,0 +1,182 @@
+:root {
+  --card-bg: #ffffff;
+  --text-color: #000;
+  --accent: #764ba2;
+  --progress-bg: #ccc;
+}
+
+body.dark {
+  --card-bg: #1e1e1e;
+  --text-color: #fff;
+  --progress-bg: #444;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  transition: 0.4s;
+}
+
+.player {
+  background: var(--card-bg);
+  color: var(--text-color);
+  width: 360px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#themeToggle {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#themeToggle.rotate {
+  transform: rotate(180deg);
+}
+
+.cover {
+  height: 180px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 12px;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 12px 0;
+}
+
+.song-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #888;
+}
+
+.progress-container {
+  background: var(--progress-bg);
+  height: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.controls button {
+  font-size: 22px;
+  margin: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* EFFECTS */
+.shuffle-active {
+  color: var(--accent);
+  transform: scale(1.2);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+.repeat-active {
+  color: #2ecc71;
+  transform: scale(1.2);
+  text-shadow: 0 0 8px #2ecc71;
+}
+
+/* VOLUME */
+.volume-control {
+  margin-top: 10px;
+}
+
+.volume-control label {
+  font-size: 13px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+#volume {
+  width: 100%;
+}
+
+/* UPLOAD */
+.upload-btn {
+  display: block;
+  background: var(--accent);
+  color: white;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+/* PLAYLIST */
+#playlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+
+#playlist li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#playlist li.active {
+  background: var(--accent);
+  color: white;
+}
+
+.remove {
+  color: red;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .player {
+    width: 90%;
+    padding: 15px;
+  }
+  .cover {
+    height: 150px;
+    font-size: 48px;
+  }
+}
